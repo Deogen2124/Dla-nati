@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Will you be my Valentine?</title><style>body{display:flex;justify-content:center;align-items:center;height:100vh;margin:0;background-image:url(https://tapety.tja.pl/obrazki/tja_normalne/84664.jpg);background-size:cover;background-position:center}.container{text-align:center;background-color:rgba(255,255,255,.8);padding:20px;border-radius:10px}.hidden{display:none}.heart{font-size:24px;color:red}.argument{font-size:24px;font-weight:700;margin-bottom:20px}#message{font-size:32px;font-weight:700;color:red}</style></head><body><div class="container"><h1>Will you be my Valentine?</h1><button id="yesBtn">Yes</button><button id="noBtn">No</button><div id="arguments"><p class="hidden argument">You make me smile every day.</p><p class="hidden argument">You're incredibly kind-hearted.</p><p class="hidden argument">Your laughter is contagious.</p><p class="hidden argument">You're beautiful inside and out.</p><p class="hidden argument">You understand me like no one else does.</p><p class="hidden argument">You support me in everything I do.</p><p class="hidden argument">You're my best friend and my soulmate.</p><p class="hidden argument">Life is brighter with you by my side.</p><p class="hidden argument">You inspire me to be a better person.</p><p class="hidden argument">I can't imagine my life without you.</p></div><p id="message" class="hidden">I can't wait for your friend Szymon ❤️</p></div><script>let yesBtn = document.getElementById('yesBtn');
+    let noBtn = document.getElementById('noBtn');
+    let argumentsDiv = document.getElementById('arguments');
+    let message = document.getElementById('message');
+
+    yesBtn.addEventListener('click', function() {
+        message.classList.remove('hidden');
+        yesBtn.classList.add('hidden');
+        noBtn.classList.add('hidden');
+    });
+
+    noBtn.addEventListener('click', function() {
+        let hiddenArguments = document.querySelectorAll('.hidden');
+        if (hiddenArguments.length > 0) {
+            hiddenArguments[0].classList.remove('hidden');
+            if (hiddenArguments.length === 1) {
+                noBtn.classList.add('hidden');
+                yesBtn.classList.remove('hidden');
+            }
+        } else {
+            noBtn.classList.add('hidden');
+            yesBtn.style.fontSize = "24px";
+            message.textContent = "I can't wait for your friend Szymon ❤️";
+            message.classList.remove('hidden');
+        }
+    });</script></body></html>
